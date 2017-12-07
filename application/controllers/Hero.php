@@ -9,11 +9,11 @@ class Hero extends CI_Controller {
     }
 
     public function ironman() {
-        echo 'Hello Ironman';
+        $this->load->view('hero/ironman');
     }
 
     public function hulk() {
-        echo 'Hello Hulk';
+        $this->load->view('hero/hulk');
     }
 
     public function myhero($heroname = '') {
