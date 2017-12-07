@@ -16,8 +16,13 @@ class Hero extends CI_Controller {
         echo 'Hello Hulk';
     }
 
-    public function myhero($heroname) {
-        echo 'My hero is ' . $heroname;
+    public function myhero($heroname = '') {
+        if(empty($heroname)){
+            echo 'I am a hero.';
+        }else{
+            echo 'My hero is ' . $heroname;
+        }
+        
     }
 
 }
