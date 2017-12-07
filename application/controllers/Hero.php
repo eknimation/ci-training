@@ -8,4 +8,12 @@ class Hero extends CI_Controller {
         echo 'Hero Controller';
     }
 
+    public function ironman() {
+        echo 'Hello Ironman';
+    }
+
+    public function hulk() {
+        echo 'Hello Hulk';
+    }
+
 }
