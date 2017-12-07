@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Hero extends CI_Controller {
 
     public function index() {
-        echo 'Hero Controller';
+        $this->load->view('hero/index');
     }
 
     public function ironman() {
