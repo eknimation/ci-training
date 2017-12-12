@@ -31,4 +31,10 @@ class Hero extends CI_Controller {
         $this->load->view('hero/myhero', $data);
     }
 
+    public function model() {
+        $this->load->model('member_model');
+        
+        echo 'Load model';
+    }
+
 }
