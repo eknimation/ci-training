@@ -9,4 +9,20 @@ class Member_model extends CI_Model {
         $this->load->database();
     }
 
+    public function create_member($data) {
+        
+    }
+
+    public function read_member($data) {
+        
+    }
+
+    public function update_member($data) {
+        
+    }
+
+    public function delete_member($data) {
+        
+    }
+
 }
