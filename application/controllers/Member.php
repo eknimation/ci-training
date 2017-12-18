@@ -14,4 +14,16 @@ class Member extends CI_Controller {
         echo 'Member';
     }
 
+    public function create($username, $password, $name) {
+        $savedata = array(
+            'username' => $username,
+            'password' => $password,
+            'name' => $name
+        );
+
+        $result = $this->member_model->create_member($savedata);
+
+        echo 'insert id ' . $result;
+    }
+
 }
