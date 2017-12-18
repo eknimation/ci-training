@@ -17,12 +17,29 @@ class Member_model extends CI_Model {
         );
 
         $this->db->insert('member', $data);
-        
+
         return $this->db->insert_id();
     }
 
-    public function read_member($data) {
-        
+    public function read_member_all() {
+        $this->db->select('id, username, name')
+                ->from('member');
+
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function read_member_by_id($id) {
+        $where = array(
+            'id' => $id
+        );
+
+        $this->db->select('id, username, name')
+                ->from('member')
+                ->where($where);
+
+        $query = $this->db->get();
+        return $query->result();
     }
 
     public function update_member($data) {

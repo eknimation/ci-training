@@ -26,4 +26,18 @@ class Member extends CI_Controller {
         echo 'insert id ' . $result;
     }
 
+    public function read($id = '') {
+        if (empty($id)) {
+            $data = $this->member_model->read_member_all();
+        } else {
+            $data = $this->member_model->read_member_by_id($id);
+        }
+
+        if (!empty($data) && is_array($data)) {
+            echo '<pre>';
+            print_r($data);
+            echo '</pre>';
+        }
+    }
+
 }
