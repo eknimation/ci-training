@@ -10,4 +10,8 @@ class Member extends CI_Controller {
         $this->load->model('member_model');
     }
 
+    public function index() {
+        echo 'Member';
+    }
+
 }
