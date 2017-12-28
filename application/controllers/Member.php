@@ -40,4 +40,19 @@ class Member extends CI_Controller {
         }
     }
 
+    public function update($id = '', $name = '') {
+        if (empty($id) || empty($name)) {
+            echo 'invalid parameter';
+        } else {
+            $savedata = array(
+                'name' => $name,
+                'id' => $id
+            );
+
+            $result = $this->member_model->update_member($savedata);
+
+            echo 'update ' . $result . ' row';
+        }
+    }
+
 }
