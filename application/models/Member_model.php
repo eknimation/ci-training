@@ -44,17 +44,20 @@ class Member_model extends CI_Model {
 
     public function update_member($savedata) {
         $data = array(
-            'name' => $savedata['name']            
+            'name' => $savedata['name']
         );
 
         $this->db->where('id', $savedata['id']);
         $this->db->update('member', $data);
-        
+
         return $this->db->affected_rows();
     }
 
-    public function delete_member($data) {
+    public function delete_member($id) {
+        $this->db->where('id', $id);
+        $this->db->delete('member');
         
+        return $this->db->affected_rows();
     }
 
 }

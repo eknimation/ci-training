@@ -55,4 +55,14 @@ class Member extends CI_Controller {
         }
     }
 
+    public function delete($id = '') {
+        if (empty($id)) {
+            echo 'invalid parameter';
+        } else {
+            $result = $this->member_model->delete_member($id);
+
+            echo 'delete ' . $result . ' row';
+        }
+    }
+
 }
