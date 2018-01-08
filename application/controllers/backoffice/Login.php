@@ -27,6 +27,9 @@ class Login extends CI_Controller {
             if (!empty($response)) {
                 $http_status = 200;
                 $response = array('message' => 'login successfully');
+
+                $this->load->library('session');
+                $this->session->set_userdata('member_id', $response[0]->id);
             } else {
                 $http_status = 400;
                 $response = array('message' => 'username หรือ password ไม่ถูกต้อง');
