@@ -84,6 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         data: $(this).serialize()
                     }).done(function (msg) {
                         alert(msg.message);
+                        window.location = '<?php echo base_url('backoffice/dashboard'); ?>';
                     }).fail(function (msg) {
                         var error_msg = msg.responseJSON;
                         alert(error_msg.message);
