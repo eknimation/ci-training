@@ -42,6 +42,20 @@ class Member_model extends CI_Model {
         return $query->result();
     }
 
+    public function read_member_by_username_and_password($username, $password) {
+        $where = array(
+            'username' => $username,
+            'password' => $password
+        );
+
+        $this->db->select('id, username, name')
+                ->from('member')
+                ->where($where);
+
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function update_member($savedata) {
         $data = array(
             'name' => $savedata['name']
@@ -56,7 +70,7 @@ class Member_model extends CI_Model {
     public function delete_member($id) {
         $this->db->where('id', $id);
         $this->db->delete('member');
-        
+
         return $this->db->affected_rows();
     }
 
