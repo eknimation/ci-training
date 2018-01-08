@@ -43,4 +43,13 @@ class Login extends CI_Controller {
         ;
     }
 
+    public function signout() {
+        $this->load->library('session');
+        $this->load->helper('url');
+
+        $this->session->unset_userdata('member_id');
+
+        redirect('backoffice/login');
+    }
+
 }
