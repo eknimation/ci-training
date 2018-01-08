@@ -22,14 +22,14 @@ class Login extends CI_Controller {
         } else {
             $this->load->model('member_model');
 
-            $response = $this->member_model->read_member_by_username_and_password($username, $password);
+            $member = $this->member_model->read_member_by_username_and_password($username, $password);
 
-            if (!empty($response)) {
+            if (!empty($member)) {
                 $http_status = 200;
                 $response = array('message' => 'login successfully');
 
                 $this->load->library('session');
-                $this->session->set_userdata('member_id', $response[0]->id);
+                $this->session->set_userdata('member_id', $member[0]->id);
             } else {
                 $http_status = 400;
                 $response = array('message' => 'username หรือ password ไม่ถูกต้อง');
